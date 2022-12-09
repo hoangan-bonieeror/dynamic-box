@@ -1,0 +1,83 @@
+.container {
+    margin: 30px 20px;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 10px 0;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    min-height: 100px;
+}
+.container > * {
+    scroll-snap-align: start;
+}
+
+.title {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    padding: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.error {
+    color: red;
+}
+
+.provider, .result, .error {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.provider, .result {
+    display: grid;
+    grid-template-columns: 100px 400px;
+    align-items: center;
+}
+
+input[type='text'] {
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 400px;
+}
+
+/* .result > input {
+    outline: none;
+    border: none;
+} */
+
+.header {
+    display: grid;
+    place-content: center center;
+    grid-template-columns: max-content;
+}
+
+header {
+    overflow-x: hidden;
+    white-space: nowrap;
+    font-size: 40px;
+    letter-spacing: 2px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    animation: 
+    typing 1s steps(40, end),
+    blink-caret 1s infinite;
+    border-right: 2px solid orange;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100% }
+}
+  
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}

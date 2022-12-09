@@ -1,0 +1,11 @@
+<div class="checkbox-container">
+    <header>{{data.name}}</header>
+    <input
+        #checkbox
+        (click)="onClickHandle()"
+        type="checkbox"
+        [(ngModel)]="data.checked"
+        checked="data.checked"
+        [indeterminate]="data.isIntermediate"
+    >
+</div>
