@@ -25,7 +25,6 @@ export class AppComponent implements OnInit {
   @ViewChild(BoxComponent) box : BoxComponent
 
   ngOnInit() : void {
-    this.data = [{ name : 'All', checked : false, isIntermediate : false }]
     this.setProperty();
     this.errorMsg = '';
   }
@@ -82,6 +81,7 @@ export class AppComponent implements OnInit {
 
   setProperty() {
     try {
+      this.data = [{ name : 'All', checked : false, isIntermediate : false }];
       if(this.property) {
         // @ts-ignore
         let data = JSON.parse(this.property).map(pro => {
@@ -122,8 +122,9 @@ export class AppComponent implements OnInit {
         this.data = [
           ...this.data,
           ...data
-        ]
-        this.errorMsg = ''
+        ];
+        this.errorMsg = '';
+        this.updateResult();
       } else {
         if(this.property.length == 0) this.errorMsg = ''
       }
