@@ -74,8 +74,8 @@ export class AppComponent implements OnInit {
   }
 
   toggleAll() {
-    this.data = this.data.map(box => {
-      return {...box, checked : this.data[0].checked}
+    this.data.map(box => {
+      box.checked = this.data[0].checked
     })
   }
 
